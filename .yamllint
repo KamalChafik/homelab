@@ -1,0 +1,33 @@
+---
+extends: default  # Base rule set
+
+ignore: |
+  cluster/prod/traefik-crds.yaml
+
+rules:
+  indentation:
+    spaces: 2
+    indent-sequences: false
+    level: warning
+
+  line-length:
+    max: 200
+    level: warning
+
+  trailing-spaces:
+    level: error
+
+  new-line-at-end-of-file:
+    level: error
+
+  truthy:
+    level: warning
+
+  document-start:
+    level: warning
+
+  key-duplicates:
+    level: error
+
+  braces:
+    level: warning
