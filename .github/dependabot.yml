@@ -7,7 +7,7 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "dependencies"
+      - "enhancement"
       - "docker-compose"
     commit-message:
       prefix: "chore(deps):"
