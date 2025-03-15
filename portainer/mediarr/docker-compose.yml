@@ -72,7 +72,7 @@ services:
     restart: unless-stopped
 
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:5.0.3
+    image: lscr.io/linuxserver/qbittorrent:5.0.4
     container_name: qbittorrent
     environment:
       - PUID=${PUID}
@@ -88,7 +88,7 @@ services:
     restart: unless-stopped
 
   jellyfin:
-    image: linuxserver/jellyfin:10.10.3
+    image: linuxserver/jellyfin:10.10.6
     container_name: jellyfin
     environment:
       - PUID=${PUID}
@@ -106,7 +106,7 @@ services:
     restart: unless-stopped
 
   jellyseerr:
-    image: fallenbagel/jellyseerr:2.1.0
+    image: fallenbagel/jellyseerr:2.5.0
     container_name: jellyseerr
     environment:
       - LOG_LEVEL=${LOG_LEVEL}
