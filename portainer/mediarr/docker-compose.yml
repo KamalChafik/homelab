@@ -88,7 +88,7 @@ services:
     restart: unless-stopped
 
   jellyfin:
-    image: linuxserver/jellyfin:10.10.3
+    image: linuxserver/jellyfin:10.10.6
     container_name: jellyfin
     environment:
       - PUID=${PUID}
