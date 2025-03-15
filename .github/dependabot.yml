@@ -1,25 +1,14 @@
 version: 2
 updates:
-  # Monitor docker-compose.yml in portainer/mediarr
   - package-ecosystem: "docker"
-    directory: "/portainer/mediarr"
+    directories:
+      - "/portainer/mediarr"
+      - "/portainer/npm"
     schedule:
       interval: "weekly"
     labels:
       - "dependencies"
-      - "docker"
-    commit-message:
-      prefix: "chore(deps):"
-      include: "scope"
-
-  # Monitor docker-compose.yml in portainer/npm
-  - package-ecosystem: "docker"
-    directory: "/portainer/npm"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "docker"
+      - "docker-compose"
     commit-message:
       prefix: "chore(deps):"
       include: "scope"
