@@ -1,0 +1,143 @@
+---
+services:
+  gluetun:
+    image: qmcgaw/gluetun:latest
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - TZ=${TZ}
+      - VPN_SERVICE_PROVIDER=${VPN_SERVICE_PROVIDER}
+      - VPN_TYPE=${VPN_TYPE}
+      - OPENVPN_USER=${OPENVPN_USER}
+      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
+      - UPDATER_PERIOD=24h
+    volumes:
+      - /DATA/AppData/Gluetun:/gluetun
+    restart: unless-stopped
+    privileged: false
+    ports:
+      - "8080:8080"   # qBittorrent Web UI
+      - "8097:8096"   # Jellyfin Web UI
+      - "6881:6881"   # Torrenting
+      - "6881:6881/udp"
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/sonarr/config:/config
+      - /DATA/Media/Shows:/data/tv
+      - /DATA/Downloads:/data/downloads
+    ports:
+      - "8989:8989"   # Sonarr Web UI
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/radarr/config:/config
+      - /DATA/Media/Movies:/data/movies
+      - /DATA/Downloads:/data/downloads
+    ports:
+      - "7878:7878"   # Radarr Web UI
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/prowlarr/config:/config
+      - /DATA/Downloads:/data/downloads
+      - /DATA/AppData/prowlarr/backup:/data/backup
+    ports:
+      - "9696:9696" # Prowlarr Web UI
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WEBUI_PORT=${WEBUI_PORT}
+    volumes:
+      - /DATA/AppData/qbittorrent/config:/config
+      - /DATA/Downloads:/data/downloads
+    depends_on:
+      - gluetun
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+
+  jellyfin:
+    image: linuxserver/jellyfin:10.10.3
+    container_name: jellyfin
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/jellyfin/config:/config
+      - /DATA/Media:/Media
+      - /opt/vc/lib:/opt/vc/lib
+    devices:
+      - /dev/dri:/dev/dri
+    depends_on:
+      - gluetun
+    network_mode: "service:gluetun"
+    restart: unless-stopped
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:2.1.0
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/big-bear-jellyseerr/config:/app/config
+    ports:
+      - "5055:5055"   # Jellyseerr Web UI
+    restart: unless-stopped
+
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /DATA/AppData/bazarr/config:/config
+      - /DATA/Media/Movies:/data/movies
+      - /DATA/Media/Shows:/data/tv
+    ports:
+      - "6767:6767"   # Bazarr Web UI
+    restart: unless-stopped
+
+  flaresolverr:
+    image: flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=info
+      - TZ=${TZ}
+    ports:
+      - "8191:8191"   # FlareSolverr Web UI
+    restart: unless-stopped
