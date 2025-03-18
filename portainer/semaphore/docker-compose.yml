@@ -21,7 +21,7 @@ services:
     image: docker.io/semaphoreui/semaphore:v2.12.14
     user: "${UID}:${GID}"
     ports:
-      - 3000:3002
+      - 3030:3000
     environment:
       - SEMAPHORE_DB_USER=${SEMAPHORE_DB_USER}
       - SEMAPHORE_DB_PASS=${SEMAPHORE_DB_PASS}
