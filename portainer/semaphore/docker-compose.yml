@@ -8,7 +8,7 @@ services:
     image: docker.io/library/mysql:8.4
     hostname: mysql
     volumes:
-      - semaphore-mysql:/var/lib/mysql
+      - /DATA/AppData/semaphore/semaphore-mysql:/var/lib/mysql
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -37,9 +37,9 @@ services:
       - SEMAPHORE_ACCESS_KEY_ENCRYPTION=${SEMAPHORE_ACCESS_KEY_ENCRYPTION}
       - ANSIBLE_HOST_KEY_CHECKING=${ANSIBLE_HOST_KEY_CHECKING}
     volumes:
-      - ./inventory/:/inventory:ro
-      - ./authorized-keys/:/authorized-keys:ro
-      - ./config/:/etc/semaphore:rw
+      - /DATA/AppData/semaphore/inventory/:/inventory
+      - /DATA/AppData/semaphore/authorized-keys/:/authorized-keys
+      - /DATA/AppData/semaphore/config/:/etc/semaphore
     restart: unless-stopped
     depends_on:
       - mysql
