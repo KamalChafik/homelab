@@ -1,12 +1,10 @@
 ---
-volumes:
-  semaphore-mysql:
-    driver: local
-
 services:
   mysql:
     image: docker.io/library/mysql:8.4
     hostname: mysql
+    ports:
+      - 3306:3306
     volumes:
       - /DATA/AppData/semaphore/semaphore-mysql:/var/lib/mysql
     environment:
