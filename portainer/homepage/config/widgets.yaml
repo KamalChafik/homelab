@@ -1,11 +1,6 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
-- search:
-    provider: [duckduckgo, google]
-    showSearchSuggestions: true
-    target: _blank
-    
 - datetime:
     text_size: xl
     format:
@@ -25,9 +20,3 @@
     cpu: true
     memory: true
     disk: /
-    cputemp: true
-    tempmin: 0 # optional, minimum cpu temp
-    tempmax: 100 # optional, maximum cpu temp
-    uptime: true
-    units: metric # only used by cpu temp, options: 'imperial' or 'metric'
-    network: true # optional, uses 'default' if true or specify a network interface name
