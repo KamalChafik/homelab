@@ -1,9 +1,6 @@
 ---
 extends: default  # Base rule set
 
-ignore: |
-  cluster/prod/traefik-crds.yaml
-
 rules:
   indentation:
     spaces: 2
