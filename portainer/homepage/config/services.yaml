@@ -1,0 +1,109 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+- Media:
+    - Jellyfin:
+        icon: jellyfin.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8097
+        description: Media Server
+        widgets:
+          - type: jellyfin
+            url: http://{{HOMEPAGE_VAR_IP}}:8097
+            key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
+
+    - Jellyseerr:
+        icon: jellyseerr.png
+        href: http://{{HOMEPAGE_VAR_IP}}:5055
+        description: Media Requests
+        widgets:
+          - type: jellyseerr
+            url: http://{{HOMEPAGE_VAR_IP}}:5055
+            key: {{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}
+
+    - Radarr:
+        icon: radarr.png
+        href: http://{{HOMEPAGE_VAR_IP}}:7878
+        description: Movie Management
+        widgets:
+          - type: radarr
+            url: http://{{HOMEPAGE_VAR_IP}}:7878
+            key: {{HOMEPAGE_VAR_RADARR_API_KEY}}
+
+    - Sonarr:
+        icon: sonarr.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8989
+        description: TV Show Management
+        widgets:
+          - type: sonarr
+            url: http://{{HOMEPAGE_VAR_IP}}:8989
+            key: {{HOMEPAGE_VAR_SONARR_API_KEY}}
+
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8080
+        description: Torrent Client
+        widgets:
+          - type: qbittorrent
+            url: http://{{HOMEPAGE_VAR_IP}}:8080
+            username: {{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}
+            password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
+
+- My Second Group:
+    - My Second Service:
+        href: http://localhost/
+        description: Homepage is the best
+
+- My Third Group:
+    - My Third Service:
+        href: http://localhost/
+        description: Homepage is 😎
+
+- Mediarr:
+    - Jellyfin:
+        href: http://192.168.2.10:8097
+        description: Jellyfin - Media Server
+        icon: jellyfin.png
+        siteMonitor: http://192.168.2.10:8097
+
+    - Jellyseerr:
+        href: http://192.168.2.10:5055
+        description: Jellyseerr - Media Requests
+        icon: jellyseerr.png
+        siteMonitor: http://192.168.2.10:5055
+        
+    - Sonarr:
+        href: http://192.168.2.10:8989
+        description: Sonarr - TV Show Management
+        icon: sonarr.png
+        siteMonitor: http://192.168.2.10:8989
+
+    - Radarr:
+        href: http://192.168.2.10:7878
+        description: Radarr - Movie Management
+        icon: radarr.png
+        siteMonitor: http://192.168.2.10:7878
+
+    - Prowlarr:
+        href: http://192.168.2.10:9696
+        description: Prowlarr - Indexer Management
+        icon: prowlarr.png
+        siteMonitor: http://192.168.2.10:9696
+
+    - qBittorrent:
+        href: http://192.168.2.10:8080
+        description: qBittorrent - Torrent Client
+        icon: qbittorrent.png
+        siteMonitor: http://192.168.2.10:8080
+
+    - Bazarr:
+        href: http://192.168.2.10:6767
+        description: Bazarr - Subtitle Management
+        icon: bazarr.png
+        siteMonitor: http://192.168.2.10:6767
+
+    - FlareSolverr:
+        href: http://192.168.2.10:8191
+        description: FlareSolverr - Captcha Solver
+        icon: flaresolverr.png
+        siteMonitor: http://192.168.2.10:8191
+

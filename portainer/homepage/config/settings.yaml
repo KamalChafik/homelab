@@ -1,0 +1,21 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+showStats: true
+statusStyle: "dot"
+
+background:
+  image: /images/landscape-tree.jpg
+  blur: sm
+  saturate: 30
+  brightness: 80
+  opacity: 30
+  
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+layout:
+  Media:
+    style: row
+    columns: 5
