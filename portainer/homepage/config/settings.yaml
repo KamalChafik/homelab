@@ -30,4 +30,3 @@
     tempmax: 100 # optional, maximum cpu temp
     uptime: true
     units: metric # only used by cpu temp, options: 'imperial' or 'metric'
-    network: true # optional, uses 'default' if true or specify a network interface name
