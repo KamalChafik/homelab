@@ -1,0 +1,22 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+
+- openmeteo:
+    label: Montreal
+    latitude: 45.552691929431404
+    longitude: -73.66655474509646
+    timezone: America/Toronto
+    units: metric
+    cache: 5
+    format:
+      maximumFractionDigits: 1
+      
+- resources:
+    cpu: true
+    memory: true
+    disk: /
