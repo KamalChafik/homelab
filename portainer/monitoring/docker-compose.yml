@@ -7,6 +7,11 @@ services:
     restart: unless-stopped
     ports:
       - "9090:9090"
+    environment:
+      - UPTIME_KUMA_HOST=${UPTIME_KUMA_HOST}
+      - UPTIME_KUMA_PORT=${UPTIME_KUMA_PORT}
+      - UPTIME_KUMA_USER=${UPTIME_KUMA_USER}
+      - UPTIME_KUMA_PASS=${UPTIME_KUMA_PASS}
     volumes:
       - "/DATA/AppData/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
       - "/DATA/AppData/prometheus/data:/prometheus"
