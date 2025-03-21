@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Uptime Kuma
+  - job_name: "uptime_kuma"
+    basic_auth:
+      username: "${UPTIME_KUMA_USER}"
+      password: "${UPTIME_KUMA_PASS}"
+    static_configs:
+      - targets:
+        - "${UPTIME_KUMA_HOST}:${UPTIME_KUMA_PORT}"
