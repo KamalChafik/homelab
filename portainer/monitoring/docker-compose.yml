@@ -3,6 +3,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.43.0
     container_name: prometheus
+    user: "1000:1000"
     restart: unless-stopped
     ports:
       - "9090:9090"
@@ -15,8 +16,8 @@ services:
       - "/DATA/AppData/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
       - "/DATA/AppData/prometheus/data:/prometheus"
     command:
-      --config.file=/etc/prometheus/prometheus.yml \
-      --storage.tsdb.path=/prometheus
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
 
   grafana:
     image: grafana/grafana:9.4.7
