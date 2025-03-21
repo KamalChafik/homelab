@@ -14,11 +14,14 @@ services:
       - OPENVPN_USER=${OPENVPN_USER}
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
       - UPDATER_PERIOD=24h
+      - HTTP_CONTROL_SERVER_ADDRESS=8000
+      - HTTP_CONTROL_SERVER_LOG=on
     volumes:
       - /DATA/AppData/Gluetun:/gluetun
     restart: unless-stopped
     privileged: false
     ports:
+      - "8000:8000"
       - "8080:8080"   # qBittorrent Web UI
       - "8097:8096"   # Jellyfin Web UI
       - "6881:6881"   # Torrenting
