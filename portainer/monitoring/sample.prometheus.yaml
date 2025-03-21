@@ -11,8 +11,8 @@ scrape_configs:
   # Uptime Kuma
   - job_name: "uptime_kuma"
     basic_auth:
-      username: "${UPTIME_KUMA_USER}"
-      password: "${UPTIME_KUMA_PASS}"
+      username: someuser
+      password: somepassword
     static_configs:
       - targets:
-        - "${UPTIME_KUMA_HOST}:${UPTIME_KUMA_PORT}"
+        - "x.x.x.x:0000"
