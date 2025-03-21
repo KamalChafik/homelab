@@ -15,5 +15,4 @@ scrape_configs:
       username: someuser
       password: somepassword
     static_configs:
-      - targets:
-        - "x.x.x.x:0000"
+      - targets: ["x.x.x.x:0000"]
