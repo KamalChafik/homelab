@@ -1,33 +1,24 @@
 ---
 # For configuration options and examples, please see:
-# https://gethomepage.dev/configs/info-widgets/
-- search:
-    provider: [duckduckgo, google]
-    showSearchSuggestions: true
-    target: _blank
-    
-- datetime:
-    text_size: xl
-    format:
-      timeStyle: short
+# https://gethomepage.dev/configs/settings/
+showStats: true
+statusStyle: "dot"
 
-- openmeteo:
-    label: Montreal
-    latitude: 45.552691929431404
-    longitude: -73.66655474509646
-    timezone: America/Toronto
-    units: metric
-    cache: 5
-    format:
-      maximumFractionDigits: 1
-      
-- resources:
-    cpu: true
-    memory: true
-    disk: /
-    cputemp: true
-    tempmin: 0 # optional, minimum cpu temp
-    tempmax: 100 # optional, maximum cpu temp
-    uptime: true
-    units: metric # only used by cpu temp, options: 'imperial' or 'metric'
-    network: true # optional, uses 'default' if true or specify a network interface name
+background:
+  image: /images/landscape-tree.jpg
+  blur: sm
+  saturate: 30
+  brightness: 80
+  opacity: 30
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
+layout:
+  Monitoring:
+    style: row
+    columns: 4
+  Media:
+    style: row
+    columns: 5

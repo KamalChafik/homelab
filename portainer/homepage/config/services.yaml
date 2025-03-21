@@ -1,6 +1,26 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
+- Monitoring:
+    - Uptime-Kuma:
+        icon: https://static-00.iconduck.com/assets.00/uptime-kuma-icon-1024x940-gabwl61r.png
+        href: http://{{HOMEPAGE_VAR_IP}}:3001
+        description: Monitoring
+        widgets:
+          - type: uptimekuma
+            url: http://{{HOMEPAGE_VAR_IP}}:3001
+            slug: homepage
+
+    - Grafana:
+        icon: grafana.png
+        href: http://{{HOMEPAGE_VAR_IP}}3003
+        description: Metrics & Dashboards
+        widgets:
+          - type: grafana
+            url: http://{{HOMEPAGE_VAR_IP}}:3003
+            username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
+            password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+
 - Media:
     - Jellyfin:
         icon: jellyfin.png
@@ -70,7 +90,7 @@
         description: Jellyseerr - Media Requests
         icon: jellyseerr.png
         siteMonitor: http://192.168.2.10:5055
-        
+
     - Sonarr:
         href: http://192.168.2.10:8989
         description: Sonarr - TV Show Management
@@ -106,4 +126,3 @@
         description: FlareSolverr - Captcha Solver
         icon: flaresolverr.png
         siteMonitor: http://192.168.2.10:8191
-
