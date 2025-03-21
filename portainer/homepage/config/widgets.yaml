@@ -5,7 +5,7 @@
     provider: [duckduckgo, google]
     showSearchSuggestions: true
     target: _blank
-    
+
 - datetime:
     text_size: xl
     format:
@@ -20,13 +20,13 @@
     cache: 5
     format:
       maximumFractionDigits: 1
-      
+
 - resources:
     cpu: true
     memory: true
     disk: /
     cputemp: true
-    tempmin: 0 
+    tempmin: 0
     tempmax: 100
     uptime: true
     units: metric

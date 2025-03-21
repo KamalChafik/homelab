@@ -90,7 +90,7 @@
         description: Jellyseerr - Media Requests
         icon: jellyseerr.png
         siteMonitor: http://192.168.2.10:5055
-        
+
     - Sonarr:
         href: http://192.168.2.10:8989
         description: Sonarr - TV Show Management
@@ -126,4 +126,3 @@
         description: FlareSolverr - Captcha Solver
         icon: flaresolverr.png
         siteMonitor: http://192.168.2.10:8191
-
