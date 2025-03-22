@@ -6,6 +6,7 @@
         icon: https://static-00.iconduck.com/assets.00/uptime-kuma-icon-1024x940-gabwl61r.png
         href: http://{{HOMEPAGE_VAR_IP}}:3001
         description: Monitoring
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3001
         widgets:
           - type: uptimekuma
             url: http://{{HOMEPAGE_VAR_IP}}:3001
@@ -15,6 +16,7 @@
         icon: grafana.png
         href: http://{{HOMEPAGE_VAR_IP}}:3003
         description: Metrics & Dashboards
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3003
         widgets:
           - type: grafana
             url: http://{{HOMEPAGE_VAR_IP}}:3003
@@ -26,6 +28,7 @@
         icon: jellyfin.png
         href: http://{{HOMEPAGE_VAR_IP}}:8097
         description: Media Server
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8097
         widgets:
           - type: jellyfin
             url: http://{{HOMEPAGE_VAR_IP}}:8097
@@ -35,6 +38,7 @@
         icon: jellyseerr.png
         href: http://{{HOMEPAGE_VAR_IP}}:5055
         description: Media Requests
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:5055
         widgets:
           - type: jellyseerr
             url: http://{{HOMEPAGE_VAR_IP}}:5055
@@ -53,6 +57,7 @@
         icon: radarr.png
         href: http://{{HOMEPAGE_VAR_IP}}:7878
         description: Movie Management
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:7878
         widgets:
           - type: radarr
             url: http://{{HOMEPAGE_VAR_IP}}:7878
@@ -62,6 +67,7 @@
         icon: sonarr.png
         href: http://{{HOMEPAGE_VAR_IP}}:8989
         description: TV Show Management
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8989
         widgets:
           - type: sonarr
             url: http://{{HOMEPAGE_VAR_IP}}:8989
@@ -71,12 +77,12 @@
         icon: qbittorrent.png
         href: http://{{HOMEPAGE_VAR_IP}}:8080
         description: Torrent Client
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8080
         widgets:
           - type: qbittorrent
             url: http://{{HOMEPAGE_VAR_IP}}:8080
             username: {{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}
             password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
-
 
 - My Second Group:
     - My Second Service:
