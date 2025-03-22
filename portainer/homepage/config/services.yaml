@@ -1,6 +1,18 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
+- Servers:
+    - Polo:
+        icon: proxmox.png
+        href: http://{{POLO_VAR_IP}}:8006
+        description: Monitoring
+        siteMonitor: http://{{POLO_VAR_IP}}:8006
+        widget:
+            type: proxmox
+            url: http://{{POLO_VAR_IP}}:8006
+            username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
+            password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
+
 - Monitoring:
     - Uptime-Kuma:
         icon: https://static-00.iconduck.com/assets.00/uptime-kuma-icon-1024x940-gabwl61r.png
@@ -22,6 +34,15 @@
             url: http://{{HOMEPAGE_VAR_IP}}:3003
             username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
             password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+
+    - Prometheus:
+        icon: prometheus.png
+        href: http://{{HOMEPAGE_VAR_IP}}:9090
+        description: Metrics Collection
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
+        widget:
+            type: prometheus
+            url: http://{{HOMEPAGE_VAR_IP}}:9090
 
 - Media:
     - Jellyfin:

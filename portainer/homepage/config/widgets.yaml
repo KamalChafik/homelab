@@ -30,4 +30,3 @@
     tempmax: 100
     uptime: true
     units: metric
-    network: true
