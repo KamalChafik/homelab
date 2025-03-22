@@ -4,12 +4,12 @@
 - Servers:
     - Polo:
         icon: proxmox.png
-        href: http://{{POLO_VAR_IP}}:8006
+        href: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
         description: Monitoring
-        siteMonitor: http://{{POLO_VAR_IP}}:8006
+        siteMonitor: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
         widgets:
           - type: proxmox
-            url: http://{{POLO_VAR_IP}}:8006
+            url: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
 
 - Monitoring:
     - Uptime-Kuma:
