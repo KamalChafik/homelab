@@ -20,12 +20,12 @@
 
     - Portainer:
         icon: portainer.png
-        href: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+        href: https://{{HOMEPAGE_VAR_IP}}:9443
         description: Container manager
-        siteMonitor: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+        siteMonitor: https://{{HOMEPAGE_VAR_IP}}:9443
         widgets:
           - type: portainer
-            url: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+            url: https://{{HOMEPAGE_VAR_IP}}:9443
             env: 3
             key: {{HOMEPAGE_VAR_PORTAINER_API_KEY}}
 
