@@ -14,6 +14,7 @@ services:
       - OPENVPN_USER=${OPENVPN_USER}
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
       - UPDATER_PERIOD=24h
+      - HTTP_CONTROL_SERVER_LOG=on
     volumes:
       - /DATA/AppData/Gluetun:/gluetun
     restart: unless-stopped
@@ -23,9 +24,10 @@ services:
       - "8097:8096"   # Jellyfin Web UI
       - "6881:6881"   # Torrenting
       - "6881:6881/udp"
+      - "8002:8000"
 
   sonarr:
-    image: lscr.io/linuxserver/sonarr:4.0.13
+    image: lscr.io/linuxserver/sonarr:4.0.14
     container_name: sonarr
     environment:
       - PUID=${PUID}
@@ -40,7 +42,7 @@ services:
     restart: unless-stopped
 
   radarr:
-    image: lscr.io/linuxserver/radarr:5.19.3
+    image: lscr.io/linuxserver/radarr:5.20.2
     container_name: radarr
     environment:
       - PUID=${PUID}
@@ -55,7 +57,7 @@ services:
     restart: unless-stopped
 
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:1.31.2
+    image: lscr.io/linuxserver/prowlarr:1.32.2
     container_name: prowlarr
     environment:
       - PUID=${PUID}
@@ -66,7 +68,7 @@ services:
       - /DATA/Downloads:/data/downloads
       - /DATA/AppData/prowlarr/backup:/data/backup
     ports:
-      - "9696:9696" # Prowlarr Web UI
+      - "9696:9696"  # Prowlarr Web UI
     depends_on:
       - gluetun
     restart: unless-stopped
@@ -106,7 +108,7 @@ services:
     restart: unless-stopped
 
   jellyseerr:
-    image: fallenbagel/jellyseerr:2.5.0
+    image: fallenbagel/jellyseerr:2.5.1
     container_name: jellyseerr
     environment:
       - LOG_LEVEL=${LOG_LEVEL}
