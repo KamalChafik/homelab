@@ -2,11 +2,6 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 - Servers:
-    - Marco:
-        icon: truenas.png
-        href: https://{{HOMEPAGE_VAR_IP}}
-        description: TrueNAS Server (coming soon)
-
     - Polo:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
@@ -17,6 +12,22 @@
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
+
+    - Marco:
+        icon: truenas.png
+        href: https://{{HOMEPAGE_VAR_IP}}
+        description: TrueNAS Server (coming soon)
+
+    - Portainer:
+        icon: portainer.png
+        href: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+        description: Container manager
+        siteMonitor: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+        widgets:
+          - type: portainer
+            url: https://{{HOMEPAGE_VAR_POLO_IP}}:9443
+            env: 3
+            key: {{HOMEPAGE_VAR_PORTAINER_API_KEY}}
 
 - Monitoring:
     - Uptime-Kuma:
