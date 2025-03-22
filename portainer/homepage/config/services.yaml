@@ -40,6 +40,15 @@
             url: http://{{HOMEPAGE_VAR_IP}}:5055
             key: {{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}
 
+    - Gluetun:
+        href: http://{{HOMEPAGE_VAR_IP}}:8002
+        description: Gluetun - VPN Container
+        icon: gluetun.png
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
+        widget:
+            type: gluetun
+            url: http://{{HOMEPAGE_VAR_IP}}:8002
+
     - Radarr:
         icon: radarr.png
         href: http://{{HOMEPAGE_VAR_IP}}:7878
@@ -68,6 +77,7 @@
             username: {{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}
             password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
 
+
 - My Second Group:
     - My Second Service:
         href: http://localhost/
@@ -80,49 +90,55 @@
 
 - Mediarr:
     - Jellyfin:
-        href: http://192.168.2.10:8097
+        href: http://{{HOMEPAGE_VAR_IP}}:8097
         description: Jellyfin - Media Server
         icon: jellyfin.png
-        siteMonitor: http://192.168.2.10:8097
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8097
 
     - Jellyseerr:
-        href: http://192.168.2.10:5055
+        href: http://{{HOMEPAGE_VAR_IP}}:5055
         description: Jellyseerr - Media Requests
         icon: jellyseerr.png
-        siteMonitor: http://192.168.2.10:5055
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:5055
 
     - Sonarr:
-        href: http://192.168.2.10:8989
+        href: http://{{HOMEPAGE_VAR_IP}}:8989
         description: Sonarr - TV Show Management
         icon: sonarr.png
-        siteMonitor: http://192.168.2.10:8989
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8989
 
     - Radarr:
-        href: http://192.168.2.10:7878
+        href: http://{{HOMEPAGE_VAR_IP}}:7878
         description: Radarr - Movie Management
         icon: radarr.png
-        siteMonitor: http://192.168.2.10:7878
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:7878
 
     - Prowlarr:
-        href: http://192.168.2.10:9696
+        href: http://{{HOMEPAGE_VAR_IP}}:9696
         description: Prowlarr - Indexer Management
         icon: prowlarr.png
-        siteMonitor: http://192.168.2.10:9696
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9696
 
     - qBittorrent:
-        href: http://192.168.2.10:8080
+        href: http://{{HOMEPAGE_VAR_IP}}:8080
         description: qBittorrent - Torrent Client
         icon: qbittorrent.png
-        siteMonitor: http://192.168.2.10:8080
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8080
 
     - Bazarr:
-        href: http://192.168.2.10:6767
+        href: http://{{HOMEPAGE_VAR_IP}}:6767
         description: Bazarr - Subtitle Management
         icon: bazarr.png
-        siteMonitor: http://192.168.2.10:6767
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:6767
 
     - FlareSolverr:
-        href: http://192.168.2.10:8191
+        href: http://{{HOMEPAGE_VAR_IP}}:8191
         description: FlareSolverr - Captcha Solver
         icon: flaresolverr.png
-        siteMonitor: http://192.168.2.10:8191
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8191
+    
+    - Gluetun:
+        href: http://{{HOMEPAGE_VAR_IP}}:8002
+        description: Gluetun - VPN Container
+        icon: gluetun.png
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
