@@ -19,7 +19,7 @@
     units: metric
     cache: 5
     format:
-      maximumFractionDigits: 1
+      maximumFractionDigits: 0
 
 - resources:
     cpu: true

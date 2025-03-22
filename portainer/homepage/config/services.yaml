@@ -2,20 +2,27 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 - Servers:
+    - Marco:
+        icon: truenas.png
+        href: https://{{HOMEPAGE_VAR_IP}}
+        description: TrueNAS Server (coming soon)
+
     - Polo:
         icon: proxmox.png
-        href: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
-        description: Monitoring
-        siteMonitor: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
+        href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
+        description: Proxmox Server
+        siteMonitor: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
         widgets:
           - type: proxmox
-            url: http://{{HOMEPAGE_VAR_POLO_IP}}:8006
+            url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
+            username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
+            password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
 
 - Monitoring:
     - Uptime-Kuma:
         icon: https://static-00.iconduck.com/assets.00/uptime-kuma-icon-1024x940-gabwl61r.png
         href: http://{{HOMEPAGE_VAR_IP}}:3001
-        description: Monitoring
+        description: Uptime Monitoring
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3001
         widgets:
           - type: uptimekuma
@@ -42,7 +49,7 @@
             type: prometheus
             url: http://{{HOMEPAGE_VAR_IP}}:9090
 
-- Media:
+- Mediarr:
     - Jellyfin:
         icon: jellyfin.png
         href: http://{{HOMEPAGE_VAR_IP}}:8097
@@ -65,7 +72,7 @@
 
     - Gluetun:
         href: http://{{HOMEPAGE_VAR_IP}}:8002
-        description: Gluetun - VPN Container
+        description: VPN Container
         icon: gluetun.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
         widget:
@@ -103,67 +110,41 @@
             username: {{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}
             password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
 
-- My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
-
-- My Third Group:
-    - My Third Service:
-        href: http://localhost/
-        description: Homepage is 😎
-
-- Mediarr:
-    - Jellyfin:
-        href: http://{{HOMEPAGE_VAR_IP}}:8097
-        description: Jellyfin - Media Server
-        icon: jellyfin.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8097
-
-    - Jellyseerr:
-        href: http://{{HOMEPAGE_VAR_IP}}:5055
-        description: Jellyseerr - Media Requests
-        icon: jellyseerr.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:5055
-
-    - Sonarr:
-        href: http://{{HOMEPAGE_VAR_IP}}:8989
-        description: Sonarr - TV Show Management
-        icon: sonarr.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8989
-
-    - Radarr:
-        href: http://{{HOMEPAGE_VAR_IP}}:7878
-        description: Radarr - Movie Management
-        icon: radarr.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:7878
-
     - Prowlarr:
         href: http://{{HOMEPAGE_VAR_IP}}:9696
-        description: Prowlarr - Indexer Management
+        description: Indexer
         icon: prowlarr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9696
-
-    - qBittorrent:
-        href: http://{{HOMEPAGE_VAR_IP}}:8080
-        description: qBittorrent - Torrent Client
-        icon: qbittorrent.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8080
+        widgets:
+          - type: prowlarr
+            url: http://{{HOMEPAGE_VAR_IP}}:9696
+            key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
 
     - Bazarr:
         href: http://{{HOMEPAGE_VAR_IP}}:6767
-        description: Bazarr - Subtitle Management
+        description: Subtitle Management
         icon: bazarr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:6767
+        widgets:
+          - type: bazarr
+            url: http://{{HOMEPAGE_VAR_IP}}:6767
+            key: {{HOMEPAGE_VAR_BAZARR_API_KEY}}
 
+- Utilities:
+    - Vaultwarden:
+        icon: vaultwarden.png
+        href: http://{{HOMEPAGE_VAR_IP}}:10380
+        description: Password Manager
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:10380
+
+    - Duplicati:
+        icon: duplicati.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8200
+        description: Backup Service
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8200
+    
     - FlareSolverr:
         href: http://{{HOMEPAGE_VAR_IP}}:8191
-        description: FlareSolverr - Captcha Solver
+        description: Captcha Solver
         icon: flaresolverr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8191
-
-    - Gluetun:
-        href: http://{{HOMEPAGE_VAR_IP}}:8002
-        description: Gluetun - VPN Container
-        icon: gluetun.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002

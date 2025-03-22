@@ -22,6 +22,6 @@ layout:
   Monitoring:
     style: row
     columns: 3
-  Media:
+  Mediarr:
     style: row
-    columns: 3
+    columns: 4
