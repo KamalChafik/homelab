@@ -20,7 +20,6 @@ services:
     restart: unless-stopped
     privileged: false
     ports:
-      - "8002:8000"
       - "8080:8080"   # qBittorrent Web UI
       - "8097:8096"   # Jellyfin Web UI
       - "6881:6881"   # Torrenting
