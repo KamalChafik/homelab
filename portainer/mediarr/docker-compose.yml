@@ -24,6 +24,7 @@ services:
       - "8097:8096"   # Jellyfin Web UI
       - "6881:6881"   # Torrenting
       - "6881:6881/udp"
+      - "8002:8000"
 
   sonarr:
     image: lscr.io/linuxserver/sonarr:4.0.13
