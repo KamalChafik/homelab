@@ -4,7 +4,7 @@
 - Servers:
     - Polo:
         icon: proxmox.png
-        href: http://{{POLO_VAR_IP}}:
+        href: http://{{POLO_VAR_IP}}:8006
         description: Monitoring
         siteMonitor: http://{{POLO_VAR_IP}}:8006
         widgets:
@@ -161,7 +161,7 @@
         description: FlareSolverr - Captcha Solver
         icon: flaresolverr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8191
-    
+
     - Gluetun:
         href: http://{{HOMEPAGE_VAR_IP}}:8002
         description: Gluetun - VPN Container
