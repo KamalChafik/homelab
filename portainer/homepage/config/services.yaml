@@ -142,7 +142,7 @@
         href: http://{{HOMEPAGE_VAR_IP}}:8200
         description: Backup Service
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8200
-    
+
     - FlareSolverr:
         href: http://{{HOMEPAGE_VAR_IP}}:8191
         description: Captcha Solver
