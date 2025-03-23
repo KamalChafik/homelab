@@ -22,11 +22,18 @@
       maximumFractionDigits: 0
 
 - resources:
+    label: Storage
+    disk: /data
+    expanded: true
+
+- resources:
+    label: System
     cpu: true
     memory: true
-    disk: /
     cputemp: true
     tempmin: 0
     tempmax: 100
+
+- resources:
+    label: Up time
     uptime: true
-    units: metric
