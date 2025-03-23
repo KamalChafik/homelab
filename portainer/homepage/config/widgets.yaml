@@ -8,8 +8,11 @@
 
 - datetime:
     text_size: xl
+    locale: en-CA
     format:
-      timeStyle: short
+      dateStyle: short
+      timeStyle: long
+      hourCycle: h23
 
 - openmeteo:
     label: Montreal
