@@ -2,6 +2,11 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 - Servers:
+    - Marco:
+        icon: truenas.png
+        href: https://{{HOMEPAGE_VAR_IP}}
+        description: TrueNAS Server (coming soon)
+
     - Polo:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
@@ -12,11 +17,6 @@
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
-
-    - Marco:
-        icon: truenas.png
-        href: https://{{HOMEPAGE_VAR_IP}}
-        description: TrueNAS Server (coming soon)
 
     - Portainer:
         icon: portainer.png
@@ -140,6 +140,19 @@
           - type: bazarr
             url: http://{{HOMEPAGE_VAR_IP}}:6767
             key: {{HOMEPAGE_VAR_BAZARR_API_KEY}}
+
+- AI:
+    - Ollama:
+        icon: ollama.png
+        href: http://{{HOMEPAGE_VAR_IP}}:11434
+        description: Ollama
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:11434
+
+    - Open Web UI:
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/open-webui.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8081
+        description: UI for AI
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8081
 
 - Utilities:
     - Vaultwarden:
