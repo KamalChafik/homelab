@@ -3,9 +3,15 @@ extends: default  # Base rule set
 
 rules:
   indentation:
-    spaces: 2
+    spaces: consistent
     indent-sequences: true
-    level: warning
+    level: error
+
+  empty-values:
+    forbid-in-block-mappings: true
+    forbid-in-flow-mappings: true
+    forbid-in-block-sequences: true
+    level: error
 
   line-length:
     max: 200
