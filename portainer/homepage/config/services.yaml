@@ -56,7 +56,7 @@
         href: http://{{HOMEPAGE_VAR_IP}}:9090
         description: Metrics Collection
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
-        widget:
+        widgets:
           - type: prometheus
             url: http://{{HOMEPAGE_VAR_IP}}:9090
 
@@ -86,8 +86,8 @@
         description: VPN Container
         icon: gluetun.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
-        widget:
-            type: gluetun
+        widgets:
+          - type: gluetun
             url: http://{{HOMEPAGE_VAR_IP}}:8002
 
     - Radarr:
