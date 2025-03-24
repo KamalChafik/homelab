@@ -57,7 +57,7 @@
         description: Metrics Collection
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
         widget:
-            type: prometheus
+          - type: prometheus
             url: http://{{HOMEPAGE_VAR_IP}}:9090
 
 - Mediarr:
@@ -87,7 +87,7 @@
         icon: gluetun.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
         widget:
-            type: gluetun
+          - type: gluetun
             url: http://{{HOMEPAGE_VAR_IP}}:8002
 
     - Radarr:
