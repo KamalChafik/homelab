@@ -8,3 +8,5 @@ services:
       - '10380:80'
     volumes:
       - /DATA/AppData/vaultwarden/data:/data
+    environment:
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_TOKEN}
