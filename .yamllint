@@ -28,6 +28,3 @@ rules:
 
   braces:
     level: warning
-
-  ignore: |
-    .github/workflows/codescan.yml
