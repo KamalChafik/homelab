@@ -29,7 +29,7 @@ You’re absolutely welcome to fork this repo and make it your own!
 
 - 🐳 **Docker Compose** is used to define each stack, with environment variables stored in `.env` files (see each folder’s `sample.env`).
 - 📦 **Portainer GitOps** watches the `main` branch and checks for updates **every 60 seconds**, automatically reconciling and redeploying changes.
-- 🔁 **Dependabot** checks for updated Docker image versions **daily** and opens a PR with updated tags — this works smoothly with Portainer’s reconciliation loop.
+- 🔁 **Dependabot** checks for updated Docker image and Github Actions versions **daily** and opens a PR with updated tags — this works smoothly with Portainer’s reconciliation loop.
 - ✅ GitHub Actions handle security scanning and YAML linting.
 
 ---
