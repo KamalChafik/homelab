@@ -18,19 +18,8 @@
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
 
-    - Portainer:
-        icon: portainer.png
-        href: https://{{HOMEPAGE_VAR_IP}}:9443
-        description: Container manager
-        siteMonitor: https://{{HOMEPAGE_VAR_IP}}:9443
-        widgets:
-          - type: portainer
-            url: https://{{HOMEPAGE_VAR_IP}}:9443
-            env: 3
-            key: {{HOMEPAGE_VAR_PORTAINER_API_KEY}}
-
 - Monitoring:
-    - Uptime-Kuma:
+    - Uptime Kuma:
         icon: https://static-00.iconduck.com/assets.00/uptime-kuma-icon-1024x940-gabwl61r.png
         href: http://{{HOMEPAGE_VAR_IP}}:3001
         description: Uptime Monitoring
@@ -59,6 +48,34 @@
         widgets:
           - type: prometheus
             url: http://{{HOMEPAGE_VAR_IP}}:9090
+
+- Infra:
+    - Portainer:
+        icon: portainer.png
+        href: https://{{HOMEPAGE_VAR_IP}}:9443
+        description: Container manager
+        siteMonitor: https://{{HOMEPAGE_VAR_IP}}:9443
+        widgets:
+          - type: portainer
+            url: https://{{HOMEPAGE_VAR_IP}}:9443
+            env: 3
+            key: {{HOMEPAGE_VAR_PORTAINER_API_KEY}}
+
+    - Home Assistant:
+        icon: home-assistant.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8123
+        description: Home automation
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8123
+        widgets:
+          - type: homeassistant
+            url: http://{{HOMEPAGE_VAR_IP}}:8123
+            key: {{HOMEPAGE_VAR_HA_API_KEY}}
+
+    - Semaphore UI:
+        icon: semaphore.png
+        href: http://{{HOMEPAGE_VAR_IP}}:3030
+        description: Ansible and OpenTofu UI
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3030
 
 - Mediarr:
     - Jellyfin:
