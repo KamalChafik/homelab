@@ -10,13 +10,19 @@
     - Polo:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
-        description: Proxmox Server
+        description: Proxmox Server 1
         siteMonitor: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
         widgets:
           - type: proxmox
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
+    
+    - Toto:
+        icon: proxmox.png
+        href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
+        description: Proxmox Server 2 (coming soon)
+        siteMonitor: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
 
 - Monitoring:
     - Uptime Kuma:

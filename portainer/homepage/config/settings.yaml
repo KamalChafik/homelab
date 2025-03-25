@@ -18,13 +18,13 @@ providers:
 layout:
   Servers:
     style: row
-    columns: 2
-  Infra:
-    style: row
-    columns: 4
+    columns: 3
   Monitoring:
     style: row
     columns: 3
+  Infra:
+    style: row
+    columns: 4
   Mediarr:
     style: row
     columns: 4
