@@ -99,6 +99,7 @@
             enableUser: true
             showEpisodeNumber: true
             expandOneStreamToTwoRows: false
+            fields: ["movies", "series", "episodes"]
 
     - Jellyseerr:
         icon: jellyseerr.png
