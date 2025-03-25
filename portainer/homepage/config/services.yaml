@@ -17,7 +17,7 @@
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
-
+    
     - Toto:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
@@ -45,6 +45,7 @@
             url: http://{{HOMEPAGE_VAR_IP}}:3003
             username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
             password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+            fields: ["datasources", "totalalerts", "alertstriggered"]
 
     - Prometheus:
         icon: prometheus.png
@@ -93,6 +94,11 @@
           - type: jellyfin
             url: http://{{HOMEPAGE_VAR_IP}}:8097
             key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
+            enableBlocks: true
+            enableNowPlaying: true
+            enableUser: true
+            showEpisodeNumber: true
+            expandOneStreamToTwoRows: false
 
     - Jellyseerr:
         icon: jellyseerr.png
