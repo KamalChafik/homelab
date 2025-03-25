@@ -70,7 +70,7 @@
           - type: homeassistant
             url: http://{{HOMEPAGE_VAR_IP}}:8123
             key: {{HOMEPAGE_VAR_HA_API_KEY}}
-    
+
     - Semaphore UI:
         icon: semaphore.png
         href: http://{{HOMEPAGE_VAR_IP}}:3030
