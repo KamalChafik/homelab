@@ -114,7 +114,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL}
       - TZ=${TZ}
     volumes:
-      - /DATA/AppData/big-bear-jellyseerr/config:/app/config
+      - /DATA/AppData/jellyseerr/config:/app/config
     ports:
       - "5055:5055"   # Jellyseerr Web UI
     restart: unless-stopped
