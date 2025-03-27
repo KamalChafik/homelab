@@ -45,6 +45,7 @@
             url: http://{{HOMEPAGE_VAR_IP}}:3003
             username: {{HOMEPAGE_VAR_GRAFANA_USERNAME}}
             password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
+            fields: ["datasources", "totalalerts", "alertstriggered"]
 
     - Prometheus:
         icon: prometheus.png
@@ -93,6 +94,12 @@
           - type: jellyfin
             url: http://{{HOMEPAGE_VAR_IP}}:8097
             key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
+            enableBlocks: true
+            enableNowPlaying: true
+            enableUser: true
+            showEpisodeNumber: true
+            expandOneStreamToTwoRows: false
+            fields: ["movies", "series", "episodes"]
 
     - Jellyseerr:
         icon: jellyseerr.png

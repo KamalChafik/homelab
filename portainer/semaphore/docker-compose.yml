@@ -1,19 +1,5 @@
 ---
 services:
-  mysql:
-    image: docker.io/library/mysql:8.4
-    hostname: mysql
-    ports:
-      - 3306:3306
-    volumes:
-      - /DATA/AppData/semaphore/semaphore-mysql:/var/lib/mysql
-    environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    restart: unless-stopped
-
   semaphore:
     container_name: semaphore
     image: docker.io/semaphoreui/semaphore:v2.12.14
@@ -39,5 +25,3 @@ services:
       - /DATA/AppData/semaphore/authorized-keys/:/authorized-keys
       - /DATA/AppData/semaphore/config/:/etc/semaphore
     restart: unless-stopped
-    depends_on:
-      - mysql
