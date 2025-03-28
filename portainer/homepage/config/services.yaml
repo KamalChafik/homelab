@@ -49,6 +49,7 @@
 
     - Prometheus:
         icon: prometheus.png
+        description: Metrics Collection
         href: http://{{HOMEPAGE_VAR_IP}}:9090
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
         widgets:
@@ -109,9 +110,9 @@
             url: http://{{HOMEPAGE_VAR_IP}}:8097
             key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
             enableBlocks: true
-            enableNowPlaying: true
-            enableUser: true
-            showEpisodeNumber: true
+            enableNowPlaying: false
+            enableUser: false
+            showEpisodeNumber: false
             expandOneStreamToTwoRows: false
             fields: ["movies", "series", "episodes"]
 
@@ -185,6 +186,13 @@
             url: http://{{HOMEPAGE_VAR_IP}}:6767
             key: {{HOMEPAGE_VAR_BAZARR_API_KEY}}
 
+    - FlareSolverr:
+        href: http://{{HOMEPAGE_VAR_IP}}:8191
+        description: Captcha Solver
+        icon: flaresolverr.png
+        server: marco
+        container: flaresolverr
+
 - AI:
     - Ollama:
         icon: ollama.png
@@ -210,9 +218,3 @@
         href: http://{{HOMEPAGE_VAR_IP}}:8200
         description: Backup Service
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8200
-
-    - FlareSolverr:
-        href: http://{{HOMEPAGE_VAR_IP}}:8191
-        description: Captcha Solver
-        icon: flaresolverr.png
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8191

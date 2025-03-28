@@ -24,10 +24,10 @@ layout:
     columns: 3
   Infra:
     style: row
-    columns: 4
+    columns: 3
   Databases:
     style: row
-    columns: 4
+    columns: 3
   Mediarr:
     style: row
-    columns: 4
+    columns: 3
