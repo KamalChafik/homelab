@@ -89,6 +89,7 @@
     - phpMyAdmin:
         icon: phpmyadmin.png
         href: http://{{HOMEPAGE_VAR_IP}}:8082
+        description: UI for MySQL
         server: marco
         container: mysql-phpmyadmin-1
         
