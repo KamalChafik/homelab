@@ -17,7 +17,7 @@
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
-    
+
     - Toto:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
@@ -50,7 +50,6 @@
     - Prometheus:
         icon: prometheus.png
         href: http://{{HOMEPAGE_VAR_IP}}:9090
-        description: Metrics Collection
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
         widgets:
           - type: prometheus
@@ -92,7 +91,7 @@
         description: UI for MySQL
         server: marco
         container: mysql-phpmyadmin-1
-        
+
     - MySQL:
         icon: mysql.png
         description: MySQL Database
