@@ -127,9 +127,8 @@
             key: {{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}
 
     - Gluetun:
-        href: http://{{HOMEPAGE_VAR_IP}}:8002
-        description: VPN Container
         icon: gluetun.png
+        description: VPN Container
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8002
         widgets:
           - type: gluetun
@@ -167,9 +166,9 @@
             password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
 
     - Prowlarr:
+        icon: prowlarr.png
         href: http://{{HOMEPAGE_VAR_IP}}:9696
         description: Indexer
-        icon: prowlarr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9696
         widgets:
           - type: prowlarr
@@ -177,9 +176,9 @@
             key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
 
     - Bazarr:
+        icon: bazarr.png
         href: http://{{HOMEPAGE_VAR_IP}}:6767
         description: Subtitle Management
-        icon: bazarr.png
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:6767
         widgets:
           - type: bazarr
@@ -187,9 +186,9 @@
             key: {{HOMEPAGE_VAR_BAZARR_API_KEY}}
 
     - FlareSolverr:
+        icon: flaresolverr.png
         href: http://{{HOMEPAGE_VAR_IP}}:8191
         description: Captcha Solver
-        icon: flaresolverr.png
         server: marco
         container: flaresolverr
 
