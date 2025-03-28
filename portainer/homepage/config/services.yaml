@@ -82,7 +82,8 @@
         icon: semaphore.png
         href: http://{{HOMEPAGE_VAR_IP}}:3030
         description: Ansible and OpenTofu UI
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3030
+        server: marco
+        container: semaphore
 
 - Databases:
     - phpMyAdmin:
