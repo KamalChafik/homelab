@@ -25,6 +25,9 @@ layout:
   Infra:
     style: row
     columns: 4
+  Databases:
+    style: row
+    columns: 4
   Mediarr:
     style: row
     columns: 4

@@ -50,7 +50,6 @@
     - Prometheus:
         icon: prometheus.png
         href: http://{{HOMEPAGE_VAR_IP}}:9090
-        description: Metrics Collection
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9090
         widgets:
           - type: prometheus
@@ -82,7 +81,22 @@
         icon: semaphore.png
         href: http://{{HOMEPAGE_VAR_IP}}:3030
         description: Ansible and OpenTofu UI
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3030
+        server: marco
+        container: semaphore
+
+- Databases:
+    - phpMyAdmin:
+        icon: phpmyadmin.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8082
+        description: UI for MySQL
+        server: marco
+        container: mysql-phpmyadmin-1
+
+    - MySQL:
+        icon: mysql.png
+        description: MySQL Database
+        server: marco
+        container: mysql-mysql-1
 
 - Mediarr:
     - Jellyfin:
