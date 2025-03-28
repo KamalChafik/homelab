@@ -17,7 +17,7 @@
             url: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
             username: {{HOMEPAGE_VAR_PROXMOX_API_ID}}
             password: {{HOMEPAGE_VAR_PROXMOX_API_KEY}}
-
+    
     - Toto:
         icon: proxmox.png
         href: https://{{HOMEPAGE_VAR_POLO_IP}}:8006
@@ -83,6 +83,19 @@
         href: http://{{HOMEPAGE_VAR_IP}}:3030
         description: Ansible and OpenTofu UI
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:3030
+
+- Databases:
+    - phpMyAdmin:
+        icon: phpmyadmin.png
+        href: http://{{HOMEPAGE_VAR_IP}}:8082
+        server: marco
+        container: mysql-phpmyadmin-1
+        
+    - MySQL:
+        icon: mysql.png
+        description: MySQL Database
+        server: marco
+        container: mysql-mysql-1
 
 - Mediarr:
     - Jellyfin:
