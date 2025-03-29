@@ -26,8 +26,8 @@ services:
     ports:
       - "8080:8080"   # qBittorrent Web UI
       - "8097:8096"   # Jellyfin Web UI
-      - "49310:49310"   # Torrenting
-      - "49310:49310/udp"
+      - "29500:29500"   # Torrenting
+      - "29500:29500/udp"
       - "8002:8000"
 
   sonarr:
