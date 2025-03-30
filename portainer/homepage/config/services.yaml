@@ -106,7 +106,7 @@
         server: marco
         container: pgadmin
 
-    - PosgreSQL:
+    - PostgreSQL:
         icon: postgres.png
         description: PostgreSQL Database
         server: marco
