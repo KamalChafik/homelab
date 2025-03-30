@@ -89,7 +89,7 @@
     - phpMyAdmin:
         icon: phpmyadmin.png
         href: http://{{HOMEPAGE_VAR_IP}}:8082
-        description: UI for MySQL
+        description: UI & Tools for MySQL
         server: marco
         container: mysql-phpmyadmin-1
 
@@ -98,6 +98,19 @@
         description: MySQL Database
         server: marco
         container: mysql-mysql-1
+
+    - pgAdmin:
+        icon: pgadmin.png
+        href: http://{{HOMEPAGE_VAR_IP}}:5050
+        description: UI & Tools for PostgreSQL
+        server: marco
+        container: pgadmin
+
+    - PostgreSQL:
+        icon: postgres.png
+        description: PostgreSQL Database
+        server: marco
+        container: postgres-db
 
 - Mediarr:
     - Jellyfin:

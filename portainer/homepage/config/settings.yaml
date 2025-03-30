@@ -27,7 +27,7 @@ layout:
     columns: 3
   Databases:
     style: row
-    columns: 3
+    columns: 4
   Mediarr:
     style: row
     columns: 3
