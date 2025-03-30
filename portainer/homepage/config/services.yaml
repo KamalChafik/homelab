@@ -98,7 +98,7 @@
         description: MySQL Database
         server: marco
         container: mysql-mysql-1
-        
+
     - pgAdmin:
         icon: pgadmin.png
         href: http://{{HOMEPAGE_VAR_IP}}:5050
