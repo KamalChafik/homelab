@@ -102,7 +102,7 @@
     - pgAdmin:
         icon: pgadmin.png
         href: http://{{HOMEPAGE_VAR_IP}}:5050
-        description: UI & Tools for PosgreSQL
+        description: UI & Tools for PostgreSQL
         server: marco
         container: pgadmin
 
