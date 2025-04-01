@@ -42,7 +42,7 @@ services:
       - /DATA/Media/Shows:/data/tv
       - /DATA/Downloads:/data/downloads
     ports:
-      - "8989:8989"   # Sonarr Web UI
+      - "8989:8989"
     restart: unless-stopped
 
   radarr:
@@ -57,7 +57,7 @@ services:
       - /DATA/Media/Movies:/data/movies
       - /DATA/Downloads:/data/downloads
     ports:
-      - "7878:7878"   # Radarr Web UI
+      - "7878:7878"
     restart: unless-stopped
 
   prowlarr:
@@ -72,7 +72,7 @@ services:
       - /DATA/Downloads:/data/downloads
       - /DATA/AppData/prowlarr/backup:/data/backup
     ports:
-      - "9696:9696"  # Prowlarr Web UI
+      - "9696:9696"
     depends_on:
       - gluetun
     restart: unless-stopped
@@ -121,7 +121,7 @@ services:
     volumes:
       - /DATA/AppData/jellyseerr/config:/app/config
     ports:
-      - "5055:5055"   # Jellyseerr Web UI
+      - "5055:5055"
     restart: unless-stopped
 
   bazarr:
@@ -136,7 +136,7 @@ services:
       - /DATA/Media/Movies:/data/movies
       - /DATA/Media/Shows:/data/tv
     ports:
-      - "6767:6767"   # Bazarr Web UI
+      - "6767:6767"
     restart: unless-stopped
 
   flaresolverr:
@@ -146,7 +146,7 @@ services:
       - LOG_LEVEL=info
       - TZ=${TZ}
     ports:
-      - "8191:8191"   # FlareSolverr Web UI
+      - "8191:8191"
     restart: unless-stopped
 
   audiobookshelf:
@@ -157,6 +157,6 @@ services:
       - /DATA/Media/AudioBooks:/audiobooks
       - /DATA/Media/Podcasts:/podcasts
       - /DATA/AppData/audiobookshelf/config:/config
-      - /DATA/AppData/audiobookshelf/config:/metadata
+      - /DATA/AppData/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/Toronto
