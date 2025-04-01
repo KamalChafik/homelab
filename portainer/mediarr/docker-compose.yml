@@ -157,6 +157,6 @@ services:
       - /DATA/Media/AudioBooks:/audiobooks
       - /DATA/Media/Podcasts:/podcasts
       - /DATA/AppData/audiobookshelf/config:/config
-      - /DATA/AppData/audiobookshelf/config:/metadata
+      - /DATA/AppData/audiobookshelf/metadata:/metadata
     environment:
       - TZ=America/Toronto
