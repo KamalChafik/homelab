@@ -148,3 +148,15 @@ services:
     ports:
       - "8191:8191"   # FlareSolverr Web UI
     restart: unless-stopped
+
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:2.19.0
+    ports:
+      - 13378:80
+    volumes:
+      - /DATA/Media/AudioBooks:/audiobooks
+      - /DATA/Media/Podcasts:/podcasts
+      - /DATA/AppData/audiobookshelf/config:/config
+      - /DATA/AppData/audiobookshelf/config:/metadata
+    environment:
+      - TZ=America/Toronto
