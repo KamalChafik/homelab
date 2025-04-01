@@ -44,14 +44,14 @@ services:
       - /DATA/AppData/uptime-kuma/data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
-  # gatus:
-  #   image: twinproduction/gatus:5.0.0
-  #   restart: unless-stopped
-  #   metrics: true
-  #   storage:
-  #     type: postgres
-  #     path: ${GATUS_PATH}
-  #   ports:
-  #     - "8083:8080"
-  #   volumes:
-  #     - /DATA/AppData/gatus/config:/config
+# gatus:
+#   image: twinproduction/gatus:5.0.0
+#   restart: unless-stopped
+#   metrics: true
+#   storage:
+#     type: postgres
+#     path: ${GATUS_PATH}
+#   ports:
+#     - "8083:8080"
+#   volumes:
+#     - /DATA/AppData/gatus/config:/config
