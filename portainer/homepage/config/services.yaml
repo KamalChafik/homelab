@@ -113,6 +113,16 @@
         container: postgres-db
 
 - Mediarr:
+    - Jellyseerr:
+        icon: jellyseerr.png
+        href: http://{{HOMEPAGE_VAR_IP}}:5055
+        description: Media Requests
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:5055
+        widgets:
+          - type: jellyseerr
+            url: http://{{HOMEPAGE_VAR_IP}}:5055
+            key: {{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}
+
     - Jellyfin:
         icon: jellyfin.png
         href: http://{{HOMEPAGE_VAR_IP}}:8097
@@ -129,24 +139,16 @@
             expandOneStreamToTwoRows: false
             fields: ["movies", "series", "episodes"]
 
-    - Jellyseerr:
-        icon: jellyseerr.png
-        href: http://{{HOMEPAGE_VAR_IP}}:5055
-        description: Media Requests
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:5055
-        widgets:
-          - type: jellyseerr
-            url: http://{{HOMEPAGE_VAR_IP}}:5055
-            key: {{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}
-
     - Audiobookshelf:
         icon: audiobookshelf.png
+        href: http://{{HOMEPAGE_VAR_IP}}:13378
         description: Audiobooks Server
         siteMonitor: http://{{HOMEPAGE_VAR_IP}}:13378
         widgets:
           - type: audiobookshelf
             url: http://{{HOMEPAGE_VAR_IP}}:13378
-            key: {{HOMEPAGE_VAR_AUDIOBOOKSHELF_API_KEY}}
+            key: {{HOMEPAGE_VAR_ABS_API_KEY}}
+            fields: ["books", "booksDuration","podcasts"]
 
     - Radarr:
         icon: radarr.png
