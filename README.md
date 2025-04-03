@@ -21,7 +21,7 @@ You’re absolutely welcome to fork this repo and make it your own!
 | [homepage](#homepage)                     | Custom dashboard with widgets, bookmarks, and service health. |
 | [mediarr](#mediarr)                       | Media stack for automatic downloads and streaming.         |
 | [monitoring](#monitoring)                 | Metrics and observability stack.                           |
-| [mysql](#mysql--phpmyadmin)               | Central MySQL database with phpMyAdmin UI.                 |
+| [databases](#databases-mysql--postgresql) | Centralized MySQL and PostgreSQL services with UI.         |
 | [nginx-proxy-manager](#nginx-proxy-manager) | Reverse proxy and SSL management (soon migrating to Traefik). |
 | [semaphore](#semaphore)                   | Web UI for automating Ansible and OpenTofu on Proxmox.     |
 | [vaultwarden](#vaultwarden)               | Self-hosted password manager backend.                      |
@@ -30,9 +30,9 @@ You’re absolutely welcome to fork this repo and make it your own!
 
 ## ⚙️ How It Works
 
-- 🐳 **Docker Compose** is used to define each stack, with environment variables stored in `.env` files (see each folder’s `sample.env`).
+- 🐿 **Docker Compose** is used to define each stack, with environment variables stored in `.env` files (see each folder’s `sample.env`).
 - 📦 **Portainer GitOps** watches the `main` branch and checks for updates **every 60 seconds**, automatically reconciling and redeploying changes.
-- 🔁 **Dependabot** checks for updated Docker image and GitHub Actions versions **daily** and opens a PR with updated tags — this works smoothly with Portainer’s reconciliation loop.
+- ↻ **Dependabot** checks for updated Docker image and GitHub Actions versions **daily** and opens a PR with updated tags — this works smoothly with Portainer’s reconciliation loop.
 - ✅ GitHub Actions handle security scanning and YAML linting.
 
 ---
@@ -91,6 +91,7 @@ A full media automation and streaming stack:
 - **FlareSolverr**: Bypasses anti-bot protection for indexers and search engines (used by Prowlarr).
 - **Glutun**: Manages VPN access for apps that need to tunnel traffic (e.g., qBittorrent).
 - **qBittorrent**: Torrent client used for media downloads, often routed through VPN via Glutun.
+- **Audiobookshelf**: Dedicated server for managing and streaming audiobooks.
 
 ➡️ [See directory](portainer/mediarr)
 
@@ -102,6 +103,7 @@ Currently includes:
 
 - **Prometheus**: Scrapes and stores metrics from my services.
 - **Grafana**: Dashboards to visualize metrics and track system health.
+- **Uptime Kuma**: Service availability monitoring with beautiful dashboards and notifications for uptime.
 
 Planned additions:
 - **Loki**: Log aggregation system for Grafana.
@@ -111,13 +113,15 @@ Planned additions:
 
 ---
 
-### MySQL + phpMyAdmin
+### Databases (MySQL + PostgreSQL)
 
-This is a **centralized MySQL instance** used by multiple containers that require a shared database backend (such as Semaphore).  
-Instead of bundling a MySQL container inside each stack, I’ve opted for this centralized service to simplify access and management.
+This is a **centralized database stack** used by multiple containers that require a shared backend (such as Semaphore or other services).  
+Instead of bundling DB containers inside each stack, I’ve opted for centralized services to simplify access and management.
 
-- **MySQL**: Main relational database service.
-- **phpMyAdmin**: Web-based UI to manage users, databases, and queries.
+- **MySQL**: Main relational database service (used by Semaphore, Uptime Kuma, etc.).
+- **phpMyAdmin**: Web-based UI to manage users, databases, and queries (MySQL).
+- **PostgreSQL**: Postgres database for services that require it.
+- **pgAdmin**: Browser-based UI for managing PostgreSQL databases.
 
 ➡️ [See directory](portainer/mysql)
 
@@ -156,3 +160,4 @@ synced via browser extensions and mobile apps.
 
 If you find this helpful or want to adapt it to your own setup, feel free to fork and customize.  
 Suggestions are welcome, but just keep in mind this setup is built for *my* environment and use case.
+
