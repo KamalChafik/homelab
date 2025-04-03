@@ -148,7 +148,7 @@
           - type: audiobookshelf
             url: http://{{HOMEPAGE_VAR_IP}}:13378
             key: {{HOMEPAGE_VAR_ABS_API_KEY}}
-            fields: ["books", "booksDuration","podcasts"]
+            fields: ["books", "booksDuration", "podcasts"]
 
     - Radarr:
         icon: radarr.png

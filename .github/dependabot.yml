@@ -5,7 +5,7 @@ updates:
     directories:
       - "/portainer"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     labels:
       - "enhancement"
       - "docker-compose"
@@ -16,7 +16,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     labels:
       - "enhancement"
       - "github-action"
