@@ -12,13 +12,3 @@ updates:
     commit-message:
       prefix: "chore(deps):"
       include: "scope"
-
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "enhancement"
-      - "github-action"
-    commit-message:
-      prefix: "chore(deps):"
-      include: "scope"
