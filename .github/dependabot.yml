@@ -3,7 +3,7 @@ version: 2
 updates:
   - package-ecosystem: "docker-compose"
     directories:
-      - "/portainer"
+      - "/portainer/*"
     schedule:
       interval: "daily"
     labels:
@@ -13,7 +13,6 @@ updates:
       prefix: "chore(deps):"
       include: "scope"
 
-  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
