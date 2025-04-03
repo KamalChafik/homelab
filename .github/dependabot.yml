@@ -12,3 +12,14 @@ updates:
     commit-message:
       prefix: "chore(deps):"
       include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "enhancement"
+      - "github-action"
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
