@@ -219,12 +219,12 @@
 
     - Readarr:
         icon: readarr.png
-        href: http://{{HOMEPAGE_VAR_IP}}:9697
+        href: http://{{HOMEPAGE_VAR_IP}}:8787
         description: eBooks & Audiobooks Management
-        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:9697
+        siteMonitor: http://{{HOMEPAGE_VAR_IP}}:8787
         widgets:
           - type: readarr
-            url: http://{{HOMEPAGE_VAR_IP}}:9697
+            url: http://{{HOMEPAGE_VAR_IP}}:8787
             key: {{HOMEPAGE_VAR_READARR_API_KEY}}
 
     - Prowlarr:
