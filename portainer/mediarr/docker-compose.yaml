@@ -14,9 +14,6 @@ services:
       - OPENVPN_USER=${OPENVPN_USER}
       - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
       - UPDATER_PERIOD=24h
-      - VPN_PORT_FORWARDING=${VPN_PORT_FORWARDING}
-      - VPN_PORT_FORWARDING_PROVIDER=${VPN_PORT_FORWARDING_PROVIDER}
-      - VPN_PORT_FORWARDING_LISTENING_PORT=${VPN_PORT_FORWARDING_LISTENING_PORT}
       - SERVER_REGIONS=${SERVER_REGIONS}
       - HTTP_CONTROL_SERVER_LOG=on
     volumes:
@@ -26,8 +23,8 @@ services:
     ports:
       - "8080:8080"   # qBittorrent Web UI
       - "8097:8096"   # Jellyfin Web UI
-      - "29500:29500"   # Torrenting
-      - "29500:29500/udp"
+      - "49310:49310"   # Torrenting
+      - "49310:49310/udp"
       - "8002:8000"
 
   sonarr:
@@ -88,7 +85,6 @@ services:
     volumes:
       - /DATA/AppData/qbittorrent/config:/config
       - /DATA/Downloads:/data/downloads
-      - /DATA/Media/AudioBooks:/data/audiobooks
     depends_on:
       - gluetun
     network_mode: "service:gluetun"
@@ -148,15 +144,3 @@ services:
     ports:
       - "8191:8191"
     restart: unless-stopped
-
-  audiobookshelf:
-    image: ghcr.io/advplyr/audiobookshelf:2.20.0
-    ports:
-      - 13378:80
-    volumes:
-      - /DATA/Media/AudioBooks:/audiobooks
-      - /DATA/Media/Podcasts:/podcasts
-      - /DATA/AppData/audiobookshelf/config:/config
-      - /DATA/AppData/audiobookshelf/metadata:/metadata
-    environment:
-      - TZ=America/Toronto
