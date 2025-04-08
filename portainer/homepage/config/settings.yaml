@@ -31,3 +31,6 @@ layout:
   Mediarr:
     style: row
     columns: 3
+  Books:
+    style: row
+    columns: 3
