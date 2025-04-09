@@ -39,7 +39,7 @@
         - icon: chatgpt.png
           href: https://chatgpt.com/
           description: ChatGPT
-  
+
     - Sunshine Server (Local):
         - icon: sunshine.png
           href: https://localhost:47990/
