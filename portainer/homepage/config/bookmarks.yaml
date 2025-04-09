@@ -4,15 +4,43 @@
 
 - Developer:
     - Github:
-        - abbr: GH
+        - icon: github.png
           href: https://github.com/
+          description: Github Website
 
 - Social:
-    - Reddit:
-        - abbr: RE
-          href: https://reddit.com/
+    - My Anonymouse:
+        - icon: https://www.myanonamouse.net/favicon-16x16.png?v=b
+          href: https://www.myanonamouse.net/
+          description: Private Tracker
 
-- Entertainment:
+    - Reddit:
+        - icon: reddit.png
+          href: https://reddit.com/
+          description: Reddit Threads
+
     - YouTube:
-        - abbr: YT
+        - icon: youtube.png
           href: https://youtube.com/
+          description: Youtube Videos
+
+- Utils:
+    - Twingate:
+        - icon: twingate.png
+          href: https://nasnas.twingate.com/
+          description: Nasnas Network
+
+    - CasaOS:
+        - icon: casaos.png
+          href: http://192.168.2.10:83
+          description: CasaOS Local Dashboard
+
+    - ChatGPT:
+        - icon: chatgpt.png
+          href: https://chatgpt.com/
+          description: ChatGPT
+
+    - Sunshine Server (Local):
+        - icon: sunshine.png
+          href: https://localhost:47990/
+          description: Local Cloud Gaming Server
