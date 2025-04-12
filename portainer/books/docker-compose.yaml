@@ -72,7 +72,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /DATA/AppData/jackett:/config
-      - /DATA/AppData/qbittorrent-books/downloads:/data/downloads
+      - /DATA/AppData/qbittorrent-books/downlogit ads:/data/downloads
     restart: unless-stopped
 
   audiobookshelf:
