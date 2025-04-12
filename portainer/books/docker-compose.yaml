@@ -72,7 +72,6 @@ services:
       - TZ=${TZ}
     volumes:
       - /DATA/AppData/jackett:/config
-      - /DATA/Media/AudioBooks:/data/downloads
       - /DATA/AppData/qbittorrent-books/downloads:/data/downloads
     restart: unless-stopped
 
