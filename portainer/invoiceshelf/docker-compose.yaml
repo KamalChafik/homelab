@@ -8,8 +8,6 @@ services:
       - 90:80
 
     environment:
-      - PUID=1000
-      - PGID=1000
       - PHP_TZ=America/Toronto
       - TIMEZONE=America/Toronto
       - APP_NAME=Laravel
