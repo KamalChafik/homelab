@@ -1,27 +1,28 @@
 ---
 services:
+
   invoiceshelf:
     container_name: invoiceshelf
     image: invoiceshelf/invoiceshelf:nightly
     restart: unless-stopped
     ports:
       - 90:80
-
     environment:
       - PHP_TZ=America/Toronto
       - TIMEZONE=America/Toronto
       - APP_NAME=Laravel
-      - APP_ENV=local
+      - APP_ENV=production
       - APP_DEBUG=false
-      - APP_URL=http://localhost:90
+      - APP_URL=http://invoice.kamalchafik.ca
       - DB_CONNECTION=pgsql
       - CACHE_STORE=file
       - SESSION_DRIVER=file
       - SESSION_LIFETIME=120
-      - SESSION_ENCRYPT=true
+      - SESSION_ENCRYPT=false
       - SESSION_PATH=/
+      - SESSION_DOMAIN=kamalchafik.ca
+      - SANCTUM_STATEFUL_DOMAINS=invoice.kamalchafik.ca
       - STARTUP_DELAY=10
-
     volumes:
       - /DATA/AppData/invoiceshelf/data:/data
       - /DATA/AppData/invoiceshelf/conf:/conf
