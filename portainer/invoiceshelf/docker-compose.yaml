@@ -11,18 +11,20 @@ services:
       - PHP_TZ=America/Toronto
       - TIMEZONE=America/Toronto
       - APP_NAME=Laravel
-      - APP_ENV=production
-      - APP_DEBUG=false
-      - APP_URL=http://invoice.kamalchafik.ca
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=https://invoice.kamalchafik.ca
       - DB_CONNECTION=pgsql
       - CACHE_STORE=file
       - SESSION_DRIVER=file
-      - SESSION_LIFETIME=120
+      - SESSION_LIFETIME=240
       - SESSION_ENCRYPT=false
       - SESSION_PATH=/
-      - SESSION_DOMAIN=localhost
-      - SANCTUM_STATEFUL_DOMAINS=localhost:90
-      - STARTUP_DELAY=10
+      - SESSION_DOMAIN=invoiceshelf.yourname.synology.me
+      - SANCTUM_STATEFUL_DOMAINS=invoiceshelf.yourname.synology.me
+      - SESSION_SECURE_COOKIE=true
+      - STARTUP_DELAY=5
+      - TRUSTED_PROXIES="*"
     volumes:
       - /DATA/AppData/invoiceshelf/data:/data
       - /DATA/AppData/invoiceshelf/conf:/conf
