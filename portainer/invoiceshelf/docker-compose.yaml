@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       - 90:80
-    
+
     environment:
       - PUID=1000
       - PGID=1000
@@ -23,7 +23,7 @@ services:
       - SESSION_ENCRYPT=true
       - SESSION_PATH=/
       - STARTUP_DELAY=10
-  
+
     volumes:
       - /DATA/AppData/invoiceshelf/data:/data
       - /DATA/AppData/invoiceshelf/conf:/conf
