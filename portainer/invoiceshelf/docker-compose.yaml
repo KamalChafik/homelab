@@ -3,7 +3,7 @@ services:
 
   invoiceshelf:
     container_name: invoiceshelf
-    image: invoiceshelf/invoiceshelf:nightly
+    image: invoiceshelf/invoiceshelf:2.1.1
     restart: unless-stopped
     ports:
       - 90:80
@@ -20,7 +20,8 @@ services:
       - SESSION_LIFETIME=120
       - SESSION_ENCRYPT=false
       - SESSION_PATH=/
-      - SANCTUM_STATEFUL_DOMAINS=invoice.kamalchafik.ca
+      - SESSION_DOMAIN=localhost
+      - SANCTUM_STATEFUL_DOMAINS=localhost:90
       - STARTUP_DELAY=10
     volumes:
       - /DATA/AppData/invoiceshelf/data:/data
