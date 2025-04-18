@@ -1,0 +1,29 @@
+---
+services:
+  invoiceshelf:
+    container_name: invoiceshelf
+    image: invoiceshelf/invoiceshelf:nightly
+    restart: unless-stopped
+    ports:
+      - 90:80
+    
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PHP_TZ=America/Toronto
+      - TIMEZONE=America/Toronto
+      - APP_NAME=Laravel
+      - APP_ENV=local
+      - APP_DEBUG=false
+      - APP_URL=http://localhost:90
+      - DB_CONNECTION=pgsql
+      - CACHE_STORE=file
+      - SESSION_DRIVER=file
+      - SESSION_LIFETIME=120
+      - SESSION_ENCRYPT=true
+      - SESSION_PATH=/
+      - STARTUP_DELAY=10
+  
+    volumes:
+      - /DATA/AppData/invoiceshelf/data:/data
+      - /DATA/AppData/invoiceshelf/conf:/conf
