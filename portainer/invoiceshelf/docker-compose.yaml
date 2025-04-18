@@ -20,7 +20,6 @@ services:
       - SESSION_LIFETIME=120
       - SESSION_ENCRYPT=false
       - SESSION_PATH=/
-      - SESSION_DOMAIN=kamalchafik.ca
       - SANCTUM_STATEFUL_DOMAINS=invoice.kamalchafik.ca
       - STARTUP_DELAY=10
     volumes:
