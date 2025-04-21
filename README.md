@@ -20,6 +20,7 @@ You’re absolutely welcome to fork this repo and make it your own!
 | [home-assistant](#home-assistant)         | Smart home automation platform.                            |
 | [homepage](#homepage)                     | Custom dashboard with widgets, bookmarks, and service health. |
 | [mediarr](#mediarr)                       | Media stack for automatic downloads and streaming.         |
+| [books](#books)                           | Automated ebook and audiobook download and organization.   |
 | [monitoring](#monitoring)                 | Metrics and observability stack.                           |
 | [databases](#databases-mysql--postgresql) | Centralized MySQL and PostgreSQL services with UI.         |
 | [invoiceshelf](#invoiceshelf)             | Lightweight self-hosted invoice/estimate PDF generator.    |
@@ -98,6 +99,24 @@ A full media automation and streaming stack:
 
 ---
 
+### Books
+
+This stack is designed for **ebook and audiobook automation**. It’s a parallel to my Mediarr setup but tailored for book discovery, downloading, and listening.
+
+- **LazyLibrarian**: Searches, grabs, and organizes ebooks and audiobooks. Works with multiple sources and metadata providers (Goodreads, Google Books, etc.).
+- **Jackett**: Provides tracker support for LazyLibrarian by exposing APIs for various torrent sites.
+- **qBittorrent-books**: Torrent client used specifically for books, routed through Gluetun for privacy.
+- **Gluetun-books**: VPN container used as the network gateway for qBittorrent-books.
+- **Audiobookshelf**: Audiobook server that indexes and streams downloaded content, including bookmarks, resume playback, metadata editing, and web-based/mobile clients.
+
+This stack is deployed with proper volume mounts to ensure:
+- LazyLibrarian can pass downloads to qBittorrent-books.
+- qBittorrent writes completed downloads to a shared path accessible by Audiobookshelf.
+
+➡️ [See directory](portainer/books)
+
+---
+
 ### Monitoring
 
 Currently includes:
@@ -136,8 +155,12 @@ It’s lightweight and ideal for freelancers or small teams who want full contro
 Features include:
 - Creation of invoices and estimates with customer data and line items.
 - Generation of PDF documents for invoices and receipts.
+- Support for multilingual/customizable email messages (PDF is attached, not linked).
+- Basic branding and business settings (e.g., currency, language, logo).
 - Sends documents to clients via email with the PDF attached.
 - **Uses the centralized PostgreSQL service** to persist billing and user data.
+
+No `.env` file is required — all configuration is done through container environment variables directly in the `docker-compose.yaml`.
 
 ➡️ [See directory](portainer/invoiceshelf)
 
@@ -166,4 +189,13 @@ Note: I removed the MySQL container from this stack to instead connect it to the
 ### Vaultwarden
 
 Self-hosted Bitwarden-compatible password manager. I use this to store all my credentials securely and access them across devices,  
-synced
+synced via browser extensions and mobile apps.
+
+➡️ [See directory](portainer/vaultwarden)
+
+---
+
+## 🤝 Contributions
+
+If you find this helpful or want to adapt it to your own setup, feel free to fork and customize.  
+Suggestions are welcome, but just keep in mind this setup is built for *my* environment and use case.
