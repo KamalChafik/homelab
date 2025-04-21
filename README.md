@@ -20,8 +20,10 @@ You’re absolutely welcome to fork this repo and make it your own!
 | [home-assistant](#home-assistant)         | Smart home automation platform.                            |
 | [homepage](#homepage)                     | Custom dashboard with widgets, bookmarks, and service health. |
 | [mediarr](#mediarr)                       | Media stack for automatic downloads and streaming.         |
+| [books](#books)                           | Automated ebook and audiobook download and organization.   |
 | [monitoring](#monitoring)                 | Metrics and observability stack.                           |
 | [databases](#databases-mysql--postgresql) | Centralized MySQL and PostgreSQL services with UI.         |
+| [invoiceshelf](#invoiceshelf)             | Lightweight self-hosted invoice/estimate PDF generator.    |
 | [nginx-proxy-manager](#nginx-proxy-manager) | Reverse proxy and SSL management (soon migrating to Traefik). |
 | [semaphore](#semaphore)                   | Web UI for automating Ansible and OpenTofu on Proxmox.     |
 | [vaultwarden](#vaultwarden)               | Self-hosted password manager backend.                      |
@@ -52,7 +54,6 @@ All stacks are designed for deployment via **Portainer with Git integration**:
 
 - `prod.env` files are intentionally **not tracked** in this repo.
 - Only `sample.env` files are provided for reference.
-- Store secrets securely — never commit them.
 
 ---
 
@@ -72,7 +73,7 @@ I may soon update the container configuration to enable additional hardware driv
 My central homelab dashboard. Displays the status of all services, useful bookmarks, and helpful widgets like weather and system status.  
 It's the first place I check when accessing the homelab.
 
-I chose it because the config is a declarative `.yaml` file, which fits well with my GitOps approach.
+I chose it because the config is a declarative `.yaml` files, which fits well with my GitOps approach.
 
 ➡️ [See directory](portainer/homepage)
 
@@ -94,6 +95,20 @@ A full media automation and streaming stack:
 - **Audiobookshelf**: Dedicated server for managing and streaming audiobooks.
 
 ➡️ [See directory](portainer/mediarr)
+
+---
+
+### Books
+
+This stack is designed for **ebook and audiobook automation**. It’s a parallel to my Mediarr setup but tailored for book discovery, downloading, and listening.
+
+- **LazyLibrarian**: Searches, grabs, and organizes ebooks and audiobooks. Works with multiple sources and metadata providers (Goodreads, Google Books, etc.).
+- **Jackett**: Provides tracker support for LazyLibrarian by exposing APIs for various torrent sites.
+- **qBittorrent-books**: Torrent client used specifically for books, routed through Gluetun for privacy.
+- **Gluetun-books**: VPN container used as the network gateway for qBittorrent-books.
+- **Audiobookshelf**: Audiobook server that indexes and streams downloaded content, including bookmarks, resume playback, metadata editing, and web-based/mobile clients.
+
+➡️ [See directory](portainer/books)
 
 ---
 
@@ -123,7 +138,22 @@ Instead of bundling DB containers inside each stack, I’ve opted for centralize
 - **PostgreSQL**: Postgres database for services that require it.
 - **pgAdmin**: Browser-based UI for managing PostgreSQL databases.
 
+Note: 
+I only add databases when my services need them, for now I have services that use MySQL and PostgreSQL so I deployed both, if more is needed,
+I'll just deploy them once and then use the same instances for future containers too
+
 ➡️ [See directory](portainer/mysql)
+
+---
+
+### Invoiceshelf
+
+**Invoiceshelf** is a self-hosted tool designed to generate and manage invoices, estimates, and payment receipts as downloadable PDFs.  
+It’s lightweight and ideal for freelancers or small teams who want full control over their billing without relying on cloud services.
+
+- **Uses PostgreSQL** to persist billing and user data.
+
+➡️ [See directory](portainer/invoiceshelf)
 
 ---
 
@@ -160,4 +190,3 @@ synced via browser extensions and mobile apps.
 
 If you find this helpful or want to adapt it to your own setup, feel free to fork and customize.  
 Suggestions are welcome, but just keep in mind this setup is built for *my* environment and use case.
-
