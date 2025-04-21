@@ -22,6 +22,7 @@ You’re absolutely welcome to fork this repo and make it your own!
 | [mediarr](#mediarr)                       | Media stack for automatic downloads and streaming.         |
 | [monitoring](#monitoring)                 | Metrics and observability stack.                           |
 | [databases](#databases-mysql--postgresql) | Centralized MySQL and PostgreSQL services with UI.         |
+| [invoiceshelf](#invoiceshelf)             | Lightweight self-hosted invoice/estimate PDF generator.    |
 | [nginx-proxy-manager](#nginx-proxy-manager) | Reverse proxy and SSL management (soon migrating to Traefik). |
 | [semaphore](#semaphore)                   | Web UI for automating Ansible and OpenTofu on Proxmox.     |
 | [vaultwarden](#vaultwarden)               | Self-hosted password manager backend.                      |
@@ -127,6 +128,21 @@ Instead of bundling DB containers inside each stack, I’ve opted for centralize
 
 ---
 
+### Invoiceshelf
+
+**Invoiceshelf** is a self-hosted tool designed to generate and manage invoices, estimates, and payment receipts as downloadable PDFs.  
+It’s lightweight and ideal for freelancers or small teams who want full control over their billing without relying on cloud services.
+
+Features include:
+- Creation of invoices and estimates with customer data and line items.
+- Generation of PDF documents for invoices and receipts.
+- Sends documents to clients via email with the PDF attached.
+- **Uses the centralized PostgreSQL service** to persist billing and user data.
+
+➡️ [See directory](portainer/invoiceshelf)
+
+---
+
 ### Nginx Proxy Manager
 
 Handles reverse proxying and SSL termination for internal services via Let's Encrypt. Super easy to use with a web UI.  
@@ -150,14 +166,4 @@ Note: I removed the MySQL container from this stack to instead connect it to the
 ### Vaultwarden
 
 Self-hosted Bitwarden-compatible password manager. I use this to store all my credentials securely and access them across devices,  
-synced via browser extensions and mobile apps.
-
-➡️ [See directory](portainer/vaultwarden)
-
----
-
-## 🤝 Contributions
-
-If you find this helpful or want to adapt it to your own setup, feel free to fork and customize.  
-Suggestions are welcome, but just keep in mind this setup is built for *my* environment and use case.
-
+synced
