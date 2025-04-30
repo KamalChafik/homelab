@@ -62,7 +62,7 @@ services:
     restart: unless-stopped
 
   jackett:
-    image: lscr.io/linuxserver/jackett:0.22.1831
+    image: lscr.io/linuxserver/jackett:0.22.1836
     container_name: jackett
     ports:
       - 9117:9117
