@@ -13,7 +13,7 @@ services:
       - "5432:5432"
 
   pgadmin:
-    image: dpage/pgadmin4:9.2
+    image: dpage/pgadmin4:9.3
     container_name: pgadmin
     restart: unless-stopped
     environment:
