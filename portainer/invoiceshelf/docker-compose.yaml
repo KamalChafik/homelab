@@ -21,7 +21,7 @@ services:
       - SESSION_ENCRYPT=false
       - SESSION_PATH=/
       - SESSION_DOMAIN=https://invoice.kamalchafik.ca
-      - SANCTUM_STATEFUL_DOMAINS=https://invoice.kamalchafik.ca
+      - SANCTUM_STATEFUL_DOMAINS=invoice.kamalchafik.ca
       - SESSION_SECURE_COOKIE=true
       - STARTUP_DELAY=5
       - TRUSTED_PROXIES="*"
