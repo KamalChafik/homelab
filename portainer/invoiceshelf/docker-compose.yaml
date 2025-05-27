@@ -20,8 +20,8 @@ services:
       - SESSION_LIFETIME=240
       - SESSION_ENCRYPT=false
       - SESSION_PATH=/
-      - SESSION_DOMAIN=invoiceshelf.yourname.synology.me
-      - SANCTUM_STATEFUL_DOMAINS=invoiceshelf.yourname.synology.me
+      - SESSION_DOMAIN=invoice.kamalchafik.ca
+      - SANCTUM_STATEFUL_DOMAINS=invoice.kamalchafik.ca
       - SESSION_SECURE_COOKIE=true
       - STARTUP_DELAY=5
       - TRUSTED_PROXIES="*"
